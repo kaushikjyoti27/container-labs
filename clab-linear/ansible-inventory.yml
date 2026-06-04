@@ -8,8 +8,8 @@ all:
     linux:
       hosts:
         clab-linear-client:
-          ansible_host: 172.20.20.4
-        clab-linear-router:
-          ansible_host: 172.20.20.3
-        clab-linear-server:
           ansible_host: 172.20.20.2
+        clab-linear-router:
+          ansible_host: 172.20.20.4
+        clab-linear-server:
+          ansible_host: 172.20.20.3
