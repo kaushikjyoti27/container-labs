@@ -8,17 +8,17 @@ h1:
     username: 
     password: 
     platform: linux
-    hostname: 175.20.20.4
+    hostname: 175.20.20.2
 h2:
     username: 
     password: 
     platform: linux
-    hostname: 175.20.20.3
+    hostname: 175.20.20.4
 h3:
     username: 
     password: 
     platform: linux
-    hostname: 175.20.20.2
+    hostname: 175.20.20.3
 s1:
     username: 
     password: 

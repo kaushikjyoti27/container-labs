@@ -7,13 +7,9 @@ all:
   children:
     linux:
       hosts:
-        clab-sdn-ctrl:
-          ansible_host: 175.20.20.10
-        clab-sdn-h1:
-          ansible_host: 175.20.20.2
-        clab-sdn-h2:
-          ansible_host: 175.20.20.4
-        clab-sdn-h3:
-          ansible_host: 175.20.20.3
-        clab-sdn-s1:
-          ansible_host: 175.20.20.5
+        clab-rdt-lab-middlebox:
+          ansible_host: 172.20.20.10
+        clab-rdt-lab-receiver:
+          ansible_host: 172.20.20.8
+        clab-rdt-lab-sender:
+          ansible_host: 172.20.20.9

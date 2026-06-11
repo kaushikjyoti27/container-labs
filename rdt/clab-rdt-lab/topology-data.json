@@ -1,0 +1,148 @@
+{
+  "name": "rdt-lab",
+  "type": "clab",
+  "clab": {
+    "config": {
+      "prefix": "clab",
+      "mgmt": {
+        "network": "clab",
+        "bridge": "br-6f0dac8d52c9",
+        "ipv4-subnet": "172.20.20.0/24",
+        "ipv4-gw": "172.20.20.1",
+        "ipv6-subnet": "3fff:172:20:20::/64",
+        "ipv6-gw": "3fff:172:20:20::1",
+        "external-access": true
+      }
+    }
+  },
+  "ssh-pub-keys": ["ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBGkYtRK6p3s8qVWra76RSsVc1eFyVftAQEHTP+YhM4JLT/1zDG5Qs0YXdkqg/TsQanp+9ejUT0Ad2VYb1jNsv/c="],
+  "nodes": {
+    "middlebox": {
+      "index": "0",
+      "shortname": "middlebox",
+      "longname": "clab-rdt-lab-middlebox",
+      "fqdn": "middlebox.rdt-lab.io",
+      "group": "",
+      "labdir": "/workspaces/container-labs/rdt/clab-rdt-lab/middlebox",
+      "kind": "linux",
+      "image": "alpine-nettools:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.10",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::a",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-6f0dac8d52c9",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/workspaces/container-labs/rdt/clab-rdt-lab/middlebox",
+        "clab-node-longname": "clab-rdt-lab-middlebox",
+        "clab-node-name": "middlebox",
+        "clab-node-type": "",
+        "clab-owner": "vscode",
+        "clab-topo-file": "/workspaces/container-labs/rdt/rdt.clab.yml",
+        "containerlab": "rdt-lab"
+      },
+      "port-bindings": [
+      ]
+    },
+    "receiver": {
+      "index": "1",
+      "shortname": "receiver",
+      "longname": "clab-rdt-lab-receiver",
+      "fqdn": "receiver.rdt-lab.io",
+      "group": "",
+      "labdir": "/workspaces/container-labs/rdt/clab-rdt-lab/receiver",
+      "kind": "linux",
+      "image": "alpine-nettools:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.8",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::8",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-6f0dac8d52c9",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/workspaces/container-labs/rdt/clab-rdt-lab/receiver",
+        "clab-node-longname": "clab-rdt-lab-receiver",
+        "clab-node-name": "receiver",
+        "clab-node-type": "",
+        "clab-owner": "vscode",
+        "clab-topo-file": "/workspaces/container-labs/rdt/rdt.clab.yml",
+        "containerlab": "rdt-lab"
+      },
+      "port-bindings": [
+      ]
+    },
+    "sender": {
+      "index": "2",
+      "shortname": "sender",
+      "longname": "clab-rdt-lab-sender",
+      "fqdn": "sender.rdt-lab.io",
+      "group": "",
+      "labdir": "/workspaces/container-labs/rdt/clab-rdt-lab/sender",
+      "kind": "linux",
+      "image": "alpine-nettools:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.9",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::9",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-6f0dac8d52c9",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/workspaces/container-labs/rdt/clab-rdt-lab/sender",
+        "clab-node-longname": "clab-rdt-lab-sender",
+        "clab-node-name": "sender",
+        "clab-node-type": "",
+        "clab-owner": "vscode",
+        "clab-topo-file": "/workspaces/container-labs/rdt/rdt.clab.yml",
+        "containerlab": "rdt-lab"
+      },
+      "port-bindings": [
+      ]
+    }
+  },
+  "links": [
+    {
+      "endpoints": {
+        "a": {
+          "node": "sender",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:8b:d8:60",
+          "peer": "z"
+        },
+        "z": {
+          "node": "middlebox",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:14:59:eb",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "middlebox",
+          "interface": "eth2",
+          "mac": "aa:c1:ab:d6:9f:5c",
+          "peer": "z"
+        },
+        "z": {
+          "node": "receiver",
+          "interface": "eth2",
+          "mac": "aa:c1:ab:c0:9f:d5",
+          "peer": "a"
+        }
+      }
+    }
+  ]
+}
